@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Dexiom.Data.Extensions;
 
 namespace Dexiom.Data
 {
@@ -9,15 +10,25 @@ namespace Dexiom.Data
         : IPagedCollection<TData>
     {
         private readonly IEnumerable<TData> _pageData;
-        
-        public PagedCollection(IEnumerable<TData> pageData, int pageNumber, int pageSize, int totalItemCount)
+
+        #region Constructors
+        public PagedCollection(IQueryable<TData> data, int pageSize, int pageNumber)
         {
-            _pageData = pageData;
-            PageNumber = pageNumber;
+            _pageData = data.GetPage(pageSize, pageNumber);
+            Count = data.Count();
             PageSize = pageSize;
-            Count = totalItemCount;
+            PageNumber = pageNumber;
         }
         
+        public PagedCollection(IEnumerable<TData> pageData, int totalItemCount, int pageSize, int pageNumber)
+        {
+            _pageData = pageData;
+            Count = totalItemCount;
+            PageSize = pageSize;
+            PageNumber = pageNumber;
+        }
+        #endregion
+
         #region IEnumerable<TData>
         public IEnumerator<TData> GetEnumerator()
         {
@@ -49,8 +60,8 @@ namespace Dexiom.Data
             }
         }
         
-        public int PageNumber { get; set; }
         public int PageSize { get; set; }
+        public int PageNumber { get; set; }
         #endregion
 
     }

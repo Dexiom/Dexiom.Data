@@ -47,12 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\QueryableExtensions.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Interfaces\IPageable.cs" />
     <Compile Include="Interfaces\IPaged.cs" />
     <Compile Include="Interfaces\IPagedCollection.cs" />
     <Compile Include="PagedCollection.cs" />
-    <Compile Include="PagedCollectionSelector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
