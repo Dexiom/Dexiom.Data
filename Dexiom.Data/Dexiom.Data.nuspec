@@ -9,7 +9,7 @@
     <iconUrl>https://raw.githubusercontent.com/Dexiom/Dexiom.Data/master/Docs/logo.png</iconUrl>
     <licenseUrl>https://github.com/Dexiom/Dexiom.Data/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/Dexiom/Dexiom.Data</projectUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes></releaseNotes>
     <copyright>© Consultation Dexiom inc.</copyright>
